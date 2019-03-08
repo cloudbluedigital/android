@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "uk.co.webuilder.myapplication"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    // Test helpers for LiveData
+    androidTestImplementation 'android.arch.core:core-testing:1.1.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'org.mockito:mockito-core:2.11.0'
+    androidTestImplementation 'org.mockito:mockito-android:2.11.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.mikepenz:iconics-core:3.0.4@aar'
+    implementation 'com.mikepenz:material-design-iconic-typeface:2.2.0.4@aar'
+    implementation 'com.mikepenz:fontawesome-typeface:5.0.13.0@aar'
+    implementation 'com.aurelhubert:ahbottomnavigation:2.0.4'
+    implementation 'net.danlew:android.joda:2.9.9.4'
+    implementation 'com.github.rahimlis:badgedtablayout:v1.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'org.apmem.tools:layouts:1.10@aar'
+    implementation 'com.google.firebase:firebase-messaging:17.4.0'
+    implementation 'com.google.firebase:firebase-core:16.0.7'
+    implementation 'com.google.android.gms:play-services-tagmanager:16.0.7'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.7'
+    implementation 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.5'
+    dependencies {
+        def room_version = '1.1.1'
+
+        implementation "android.arch.persistence.room:runtime:$room_version"
+        annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+        // use kapt for Kotlin
+
+        // Test helpers
+        androidTestImplementation "android.arch.persistence.room:testing:$room_version"
+    }
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.jakewharton:butterknife-annotations:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.github.gcacace:signature-pad:1.2.1'
+    implementation 'com.github.RobertApikyan:SegmentedControl:1.0.4'
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.5'
+    implementation 'com.github.nikartm:image-support:1.0.4'
+    implementation files('libs/android-viewbadger.jar')
+
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation 'io.sentry:sentry-android:1.7.14'
+    implementation 'org.slf4j:slf4j-nop:1.7.25'
+
+    implementation 'com.kevalpatel2106:fingerprint-dialog-compat:1.0'
+    implementation 'info.hoang8f:android-segmented:1.0.6'
+
+    apply plugin: 'com.google.gms.google-services'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.6@aar') {
+        transitive = true
+    }
+}
